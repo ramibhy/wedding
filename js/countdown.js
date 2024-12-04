@@ -12,8 +12,11 @@ const minutesOnes = document.getElementById('minutes-ones');
 const secondsTens = document.getElementById('seconds-tens');
 const secondsOnes = document.getElementById('seconds-ones');
 
+// Initial update on page load
+updateAllDigits();
+
 // Update the countdown every second
-setInterval(function() {
+setInterval(function () {
   // Get the current time
   const now = new Date().getTime();
   const timeLeft = targetDate - now;
@@ -50,10 +53,38 @@ function updateDigit(digitElement, newValue) {
   if (currentValue !== newValue) {
     // Add flip class to start animation
     digitElement.classList.add('flip');
-    setTimeout(function() {
+    setTimeout(function () {
       // Set the new value and remove the flip class after animation
       digitElement.textContent = newValue;
       digitElement.classList.remove('flip');
     }, 500); // Flip duration time
   }
+}
+
+// Function to initialize all digits immediately on page load
+function updateAllDigits() {
+  const now = new Date().getTime();
+  const timeLeft = targetDate - now;
+
+  if (timeLeft <= 0) {
+    // If the countdown reaches zero, stop the timer
+    return;
+  }
+
+  // Calculate days, hours, minutes, and seconds
+  const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+  // Update the flipdown digits immediately on page load
+  updateDigit(daysHundreds, Math.floor(days / 100));
+  updateDigit(daysTens, Math.floor((days % 100) / 10));
+  updateDigit(daysOnes, days % 10);
+  updateDigit(hoursTens, Math.floor(hours / 10));
+  updateDigit(hoursOnes, hours % 10);
+  updateDigit(minutesTens, Math.floor(minutes / 10));
+  updateDigit(minutesOnes, minutes % 10);
+  updateDigit(secondsTens, Math.floor(seconds / 10));
+  updateDigit(secondsOnes, seconds % 10);
 }
