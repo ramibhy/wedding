@@ -41,12 +41,13 @@
             <div class="navbar-nav ml-auto py-0">
                 <a href="#home" class="nav-item nav-link active">Home</a>
                 <a href="#story" class="nav-item nav-link">Story</a>
+                <a href="#event" class="nav-item nav-link">Event</a>
             </div>
             <a href="#" class="navbar-brand mx-5 d-none d-lg-block">
                 <h1 class="font-secondary text-white mb-n2">Rami <span class="text-primary">&</span> Abir</h1>
             </a>
             <div class="navbar-nav mr-auto py-0">
-                <a href="#event" class="nav-item nav-link">Event</a>
+                <a href="#location" class="nav-item nav-link">Location</a>
                 <a href="#rsvp" class="nav-item nav-link">Contact</a>
                 <a href="#contact" class="nav-item nav-link">Infos</a>
             </div>
@@ -176,17 +177,17 @@
                 </div>
                 <div class="row">
                     <div class="col-md-6 text-center text-md-right">
-                        <div class="h-100 d-flex flex-column justify-content-center  p-4 mr-md-3">
+                        <div class="h-100 d-flex flex-column justify-content-center p-4 mr-md-3">
                             <p class="m-0">To be continued</p>
                         </div>
                     </div>
                     <div class="col-md-6 text-center text-md-left">
-                        <div class="h-100 d-flex flex-column justify-content-center  p-4 ml-md-3">
+                        <div class="h-100 d-flex flex-column justify-content-center p-4 ml-md-3">
                             <p class="m-0">...</p>
                         </div>
                     </div>
                 </div>
-                
+
             </div>
         </div>
     </div>
@@ -230,7 +231,7 @@
     </div>
     <!-- Event End -->
 
-    <!-- RSVP Start -->
+    <!-- Contact Start -->
     <div class="container-fluid py-5" id="rsvp">
         <div class="container py-5">
             <div class="section-title position-relative text-center">
@@ -241,34 +242,14 @@
             <div class="row justify-content-center">
                 <div class="col-lg-8">
                     <div class="text-center">
-                        <form>
-                            <div class="form-row">
-                                <div class="form-group col-sm-6">
-                                    <input type="text" class="form-control bg-secondary border-0 py-4 px-3"
-                                        placeholder="Your Name" />
-                                </div>
-                                <div class="form-group col-sm-6">
-                                    <input type="email" class="form-control bg-secondary border-0 py-4 px-3"
-                                        placeholder="Your Email" />
-                                </div>
+                        <form action="mailto:rami.belhadjyoussef@gmail.com" method="post" enctype="text/plain">
+                            <div class="form-group">
+                                <input type="text" class="form-control bg-secondary border-0 py-4 px-3"
+                                    placeholder="Name" required />
                             </div>
-                            <div class="form-row">
-                                <div class="form-group col-sm-6">
-                                    <select class="form-control bg-secondary border-0" style="height: 52px;">
-                                        <option>Number of Guest</option>
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                    </select>
-                                </div>
-                                <div class="form-group col-sm-6">
-                                    <select class="form-control bg-secondary border-0" style="height: 52px;">
-                                        <option>I'm Attending</option>
-                                        <option>All Events</option>
-                                        <option>Wedding Party</option>
-                                    </select>
-                                </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control bg-secondary border-0 py-4 px-3" name="subject"
+                                    id="subject" placeholder="Subject" required>
                             </div>
                             <div class="form-group">
                                 <textarea class="form-control bg-secondary border-0 py-2 px-3" rows="5"
@@ -294,11 +275,13 @@
                 <i class="far fa-heart text-white"></i>
             </div>
             <div class="d-flex justify-content-center mb-4">
-                <a class="btn btn-lg btn-outline-light btn-lg-square mr-2" href="#"><i
+                <a class="btn btn-lg btn-outline-light btn-lg-square mr-2" href="https://www.facebook.com/rami.belhadjyoussef" target="_blank"><i
                         class="fab fa-facebook-f"></i></a>
-                <a class="btn btn-lg btn-outline-light btn-lg-square" href="#"><i class="fab fa-instagram"></i></a>
-                <a class="btn btn-lg btn-outline-light btn-lg-square mr-2" href="#"><i
+                <a class="btn btn-lg btn-outline-light btn-lg-square" href="https://www.instagram.com/ramibhy" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a class="btn btn-lg btn-outline-light btn-lg-square mr-2" href="https://www.linkedin.com/in/ramibhy" target="_blank"><i
                         class="fab fa-linkedin-in"></i></a>
+                <a class="btn btn-lg btn-outline-light btn-lg-square mr-2"
+                    href="https://api.whatsapp.com/send?phone=0021697554425"><i class="fab fab fa-whatsapp" target="_blank"></i></a>
             </div>
             <div class="d-flex justify-content-center py-2">
                 <p class="text-white" href="#">rami.belhadjyoussef@gmail.com</p>
