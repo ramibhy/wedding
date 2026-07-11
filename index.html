@@ -1,381 +1,1016 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>Rami & Abir — A Wedding Film</title>
 
-<head>
-    <meta charset="utf-8">
-    <title>Rami & Abir </title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="Free HTML Templates" name="keywords">
-    <meta content="Free HTML Templates" name="description">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Alex+Brush&family=Amiri:wght@400;700&family=Aref+Ruqaa:wght@400;700&family=Reem+Kufi:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap"
+      rel="stylesheet"
+    />
 
-    <!-- Favicon -->
-    <link href="img/favicon.ico" rel="icon">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Google Web Fonts -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@400;600&display=swap"
-        rel="stylesheet">
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 
-    <!-- Font Awesome -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-
-    <!-- Libraries Stylesheet -->
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
-
-    <!-- Customized Bootstrap Stylesheet -->
-    <link href="css/style.css" rel="stylesheet">
-    <link href="css/countdown.css" rel="stylesheet">
-</head>
-
-<body data-spy="scroll" data-target=".navbar" data-offset="51">
-    <!-- Navbar Start -->
-    <nav class="navbar fixed-top shadow-sm navbar-expand-lg bg-dark navbar-dark py-3 py-lg-0 px-lg-5">
-        <a href="index.html" class="navbar-brand d-block d-lg-none">
-            <h1 class="font-secondary text-white mb-n2">Rami <span class="text-primary">&</span> Abir</h1>
-        </a>
-        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
-            <div class="navbar-nav ml-auto py-0">
-                <a href="#home" class="nav-item nav-link active">Home</a>
-                <a href="#story" class="nav-item nav-link">Story</a>
-                <a href="#event" class="nav-item nav-link">Event</a>
-            </div>
-            <a href="#" class="navbar-brand mx-5 d-none d-lg-block">
-                <h1 class="font-secondary text-white mb-n2">Rami <span class="text-primary">&</span> Abir</h1>
-            </a>
-            <div class="navbar-nav mr-auto py-0">
-                <a href="#address" class="nav-item nav-link">Address</a>
-                <a href="#rsvp" class="nav-item nav-link">Contact</a>
-                <a href="#contact" class="nav-item nav-link">Infos</a>
-            </div>
-        </div>
-    </nav>
-    <!-- Navbar End -->
-
-
-    <!-- Carousel Start -->
-    <div class="container-fluid p-0 mb-5 pb-5" id="home">
-        <div id="header-carousel" class="carousel slide carousel-fade" data-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item position-relative active" style="height: 100vh; min-height: 400px;">
-                    <img class="position-absolute w-100 h-100" src="img/carousel-1.jpg" style="object-fit: cover;">
-                    <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
-                        <div class="p-3" style="max-width: 900px;">
-                            <h1 class="display-1 font-secondary text-white mt-n3 mb-md-4">Rami & Abir</h1>
-                            <div class="d-inline-block border-top border-bottom border-light py-3 px-4">
-                                <h3 class="text-uppercase font-weight-normal text-white m-0"
-                                    style="letter-spacing: 2px;">We're getting married</h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item position-relative" style="height: 100vh; min-height: 400px;">
-                    <img class="position-absolute w-100 h-100" src="img/carousel-2.jpg" style="object-fit: cover;">
-                    <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
-                        <div class="p-3" style="max-width: 900px;">
-                            <h1 class="display-1 font-secondary text-white mt-n3 mb-md-4">Rami & Abir</h1>
-                            <div class="d-inline-block border-top border-bottom border-light py-3 px-4">
-                                <h3 class="text-uppercase font-weight-normal text-white m-0"
-                                    style="letter-spacing: 2px;">We're getting married</h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="countdown-container">
-                <div class="flipdown">
-                    <!-- Days (Hundreds, Tens, Ones) -->
-                    <div class="digit-container">
-                        <div class="digit-container-align">
-                            <div class="digit" id="days-hundreds"></div>
-                            <div class="digit" id="days-tens"></div>
-                            <div class="digit" id="days-ones"></div>
-                        </div>
-                        <div class="label">Days</div>
-                    </div>
-
-                    <!-- Hours (Tens, Ones) -->
-                    <div class="digit-container">
-                        <div class="digit-container-align">
-                            <div class="digit" id="hours-tens"></div>
-                            <div class="digit" id="hours-ones"></div>
-                        </div>
-                        <div class="label">Hours</div>
-                    </div>
-
-                    <!-- Minutes (Tens, Ones) -->
-                    <div class="digit-container">
-                        <div class="digit-container-align">
-                            <div class="digit" id="minutes-tens"></div>
-                            <div class="digit" id="minutes-ones"></div>
-                        </div>
-                        <div class="label">Minutes</div>
-                    </div>
-
-                    <!-- Seconds (Tens, Ones) -->
-                    <div class="digit-container">
-                        <div class="digit-container-align">
-                            <div class="digit" id="seconds-tens"></div>
-                            <div class="digit" id="seconds-ones"></div>
-                        </div>
-                        <div class="label">Seconds</div>
-                    </div>
-                </div>
-            </div>
-            <a class="carousel-control-prev justify-content-start" href="#header-carousel" data-slide="prev">
-                <div class="btn btn-primary px-0" style="width: 68px; height: 68px;">
-                    <span class="carousel-control-prev-icon mt-3"></span>
-                </div>
-            </a>
-            <a class="carousel-control-next justify-content-end" href="#header-carousel" data-slide="next">
-                <div class="btn btn-primary px-0" style="width: 68px; height: 68px;">
-                    <span class="carousel-control-next-icon mt-3"></span>
-                </div>
-            </a>
-        </div>
-    </div>
-    <!-- Carousel End -->
-
-
-    <!-- Story Start -->
-    <div class="container-fluid py-5" id="story">
-        <div class="container pt-5 pb-3">
-            <div class="section-title position-relative text-center">
-                <h6 class="text-uppercase text-primary mb-3" style="letter-spacing: 3px;">Story</h6>
-                <h1 class="font-secondary display-4">Our Love Story</h1>
-                <i class="far fa-heart text-dark"></i>
-            </div>
-            <div class="container timeline position-relative p-0">
-                <div class="row">
-                    <div class="col-md-6 text-center text-md-right">
-                        <img class="img-fluid mr-md-3" src="img/story-1.jpg" alt="">
-                    </div>
-                    <div class="col-md-6 text-center text-md-left">
-                        <div class="h-100 d-flex flex-column justify-content-center bg-secondary p-4 ml-md-3">
-                            <h4 class="mb-2">First Meet & Declaration</h4>
-                            <p class="text-uppercase mb-2">23 June 2024</p>
-                            <p class="m-0">On that day, as the sun rose over the beach, we spoke those words for the
-                                very first time: I love you.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6 text-center text-md-right">
-                        <div class="h-100 d-flex flex-column justify-content-center bg-secondary p-4 mr-md-3">
-                            <h4 class="mb-2">First Official Step</h4>
-                            <p class="text-uppercase mb-2">20 September 2024</p>
-                            <p class="m-0">Taking the first heartfelt step: speaking to her father.</p>
-                        </div>
-                    </div>
-                    <div class="col-md-6 text-center text-md-left">
-                        <img class="img-fluid ml-md-3" src="img/story-2.jpg" alt="">
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6 text-center text-md-right">
-                        <div class="h-100 d-flex flex-column justify-content-center p-4 mr-md-3">
-                            <p class="m-0">To be continued</p>
-                        </div>
-                    </div>
-                    <div class="col-md-6 text-center text-md-left">
-                        <div class="h-100 d-flex flex-column justify-content-center p-4 ml-md-3">
-                            <p class="m-0">...</p>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </div>
-    <!-- Story End -->
-
-
-    <!-- Event Start -->
-    <div class="container-fluid py-5" id="event">
-        <div class="container py-5">
-            <div class="section-title position-relative text-center">
-                <h6 class="text-uppercase text-primary mb-3" style="letter-spacing: 3px;">Event</h6>
-                <h1 class="font-secondary display-4">Our Wedding Event</h1>
-                <i class="far fa-heart text-dark"></i>
-            </div>
-            <div class="row justify-content-center">
-                <div class="col-md-6 text-center">
-                    <h5 class="font-weight-normal text-muted mb-3 pb-3">Clita ipsum aliquyam dolor diam dolores elitr
-                        nonumy. Rebum sea vero ipsum eirmod tempor kasd. Diam amet lorem erat eos sit lorem elitr justo
-                    </h5>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-6 border-right border-primary">
-                    <div class="text-center text-md-right mr-md-3 mb-4 mb-md-0">
-                        <img class="img-fluid mb-4" src="img/event-1.jpg" alt="">
-                        <h4 class="mb-3">The Reception</h4>
-                        <p class="mb-2">123 Street, New York, USA</p>
-                        <p class="mb-0">12:00AM - 13:00PM</p>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="text-center text-md-left ml-md-3">
-                        <img class="img-fluid mb-4" src="img/event-2.jpg" alt="">
-                        <h4 class="mb-3">Wedding Party</h4>
-                        <p class="mb-2">123 Street, New York, USA</p>
-                        <p class="mb-0">12:00AM - 13:00PM</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Event End -->
-
-    <!-- Address Start -->
-    <div class="container-fluid py-5" id="address">
-        <div class="container py-5">
-            <div class="section-title position-relative text-center">
-                <h6 class="text-uppercase text-primary mb-3" style="letter-spacing: 3px;">Address</h6>
-                <h1 class="font-secondary display-4">Our Wedding Address</h1>
-                <i class="far fa-heart text-dark"></i>
-            </div>
-            <div style="width: 100%; max-width: 100%; overflow: hidden;">
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1360.8789343651758!2d10.812312420232171!3d35.78191428109518!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x13026d8259b00555%3A0xf84f40a57b1af564!2sTour%20la%20falaise%20monastir!5e0!3m2!1sfr!2sfr!4v1733305639223!5m2!1sfr!2sfr"
-                    style="width: 100%; height: 400px; border: 0;" allowfullscreen="" loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div>
-        </div>
-    </div>
-    <!-- Address End -->
-
-    <!-- Contact Start -->
-    <div class="container-fluid py-5" id="rsvp">
-        <div class="container py-5">
-            <div class="section-title position-relative text-center">
-                <h6 class="text-uppercase text-primary mb-3" style="letter-spacing: 3px;">Contact Us</h6>
-                <h1 class="font-secondary display-4">Join Our Party</h1>
-                <i class="far fa-heart text-dark"></i>
-            </div>
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <div class="text-center">
-                        <form action="mailto:rami.belhadjyoussef@gmail.com" method="post" enctype="text/plain">
-                            <div class="form-group">
-                                <input type="text" class="form-control bg-secondary border-0 py-4 px-3"
-                                id="name" name="name" placeholder="Name" required />
-                            </div>
-                            <div class="form-group">
-                                <input type="email" class="form-control bg-secondary border-0 py-4 px-3"
-                                id="email" name="email" placeholder="Mail" required />
-                            </div>
-                            <div class="form-group">
-                                <input type="text" class="form-control bg-secondary border-0 py-4 px-3" 
-                                    id="subject" name="subject" placeholder="Subject" required>
-                            </div>
-                            <div class="form-group">
-                                <textarea class="form-control bg-secondary border-0 py-2 px-3" rows="5"
-                                id="message" name="message" placeholder="Message" required="required"></textarea>
-                            </div>
-                            <div>
-                                <button class="btn btn-primary font-weight-bold py-3 px-5" type="submit">Submit</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Contact End -->
-
-
-    <!-- Footer Start -->
-    <div class="container-fluid bg-dark text-white py-5" id="contact" style="margin-top: 90px;">
-        <div class="container text-center py-5">
-            <div class="section-title position-relative text-center">
-                <h1 class="font-secondary display-3 text-white">Thank You</h1>
-                <i class="far fa-heart text-white"></i>
-            </div>
-            <div class="d-flex justify-content-center mb-4">
-                <a class="btn btn-lg btn-outline-light btn-lg-square mr-2"
-                    href="https://www.facebook.com/rami.belhadjyoussef" target="_blank"><i
-                        class="fab fa-facebook-f"></i></a>
-                <a class="btn btn-lg btn-outline-light btn-lg-square" href="https://www.instagram.com/ramibhy"
-                    target="_blank"><i class="fab fa-instagram"></i></a>
-                <a class="btn btn-lg btn-outline-light btn-lg-square mr-2" href="https://www.linkedin.com/in/ramibhy"
-                    target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                <a class="btn btn-lg btn-outline-light btn-lg-square mr-2"
-                    href="https://api.whatsapp.com/send?phone=0021697554425"><i class="fab fab fa-whatsapp"
-                        target="_blank"></i></a>
-            </div>
-            <div class="d-flex justify-content-center py-2" style="flex-wrap: wrap;">
-                <p class="text-white" href="#">rami.belhadjyoussef@gmail.com</p>
-                <span class="px-3">|</span>
-                <p class="text-white" href="#">+216 97 55 44 25</p>
-            </div>
-        </div>
-    </div>
-    <!-- Footer End -->
-
-
-    <!-- Scroll to Bottom -->
-    <i class="fa fa-2x fa-angle-down text-white scroll-to-bottom"></i>
-
-    <!-- Back to Top -->
-    <a href="#" class="btn btn-lg btn-outline-primary btn-lg-square back-to-top"><i
-            class="fa fa-angle-double-up"></i></a>
-
-
-    <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/waypoints/waypoints.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-    <script src="lib/isotope/isotope.pkgd.min.js"></script>
-    <script src="lib/lightbox/js/lightbox.min.js"></script>
-
-    <!-- Template Javascript -->
-    <script src="js/main.js"></script>
-    <script src="js/countdown.js"></script>
     <script>
-        // Disable F12 options
-        document.onkeypress = function (event) {
-            event = (event || window.event);
-            if (event.keyCode == 123) {
-            return false;
-            }
-        }
-        document.onmousedown = function (event) {
-            event = (event || window.event);
-            if (event.keyCode == 123) {
-            return false;
-            }
-        }
-        document.onkeydown = function (event) {
-            event = (event || window.event);
-             //disable Ctrl+U and f12
-            if (event.keyCode == 123 ||(event.ctrlKey && (event.keyCode === 85 )) ){
-            return false;
-            }
-        }
-    
-       </script>
-    
-       <script type="text/javascript">
-        // disable copying and pasting
-        document.addEventListener('copy', function(e) {
-          e.preventDefault();
-        });
-    
-        document.addEventListener('cut', function(e) {
-          e.preventDefault();
-        });
-    
-        document.addEventListener('paste', function(e) {
-          e.preventDefault();
-        });
-      </script>
-</body>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              sand: "#FBF3E1",
+              foam: "#EAF6F5",
+              ocean: "#0B6E8C",
+              turquoise: "#2FB8B0",
+              deepsea: "#08425A",
+              coral: "#FFD9BF",
+              gold: "#B9975B",
+              goldlight: "#D8C08B",
+            },
+            fontFamily: {
+              sans: ["Montserrat", "sans-serif"],
+              script: ['"Alex Brush"', "cursive"],
+              serif: ['"Cormorant Garamond"', "serif"],
+              arabic: ["Amiri", "serif"],
+              "arabic-display": ['"Aref Ruqaa"', "serif"],
+              kufi: ["Reem Kufi", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
 
+    <style>
+      :root {
+        --sand: #fbf3e1;
+        --ocean-deep: #0b6e8c;
+        --turquoise-accent: #2fb8b0;
+        --deepsea-dark: #08425a;
+        --coral-blush: #ffd9bf;
+        --gold-accent: #b9975b;
+      }
+
+      html,
+      body {
+        background: #071b24;
+        overscroll-behavior-y: none;
+      }
+
+      body {
+        overflow: hidden;
+      } /* lifted by JS once splash opens */
+
+      /* ---------- Phone frame ---------- */
+      #phone-frame {
+        box-shadow:
+          0 40px 80px -20px rgba(2, 15, 20, 0.7),
+          0 0 0 10px #071b24,
+          0 0 0 11px rgba(47, 184, 176, 0.35);
+      }
+
+      /* ---------- Beach background with a thin inset page border ---------- */
+      #app {
+        background-color: #fbf3e1;
+      }
+      #content-frame {
+        position: relative;
+        overflow: hidden;
+        margin: 14px;
+        border: 1px solid rgba(47, 184, 176, 0.4);
+      }
+
+      /* ---------- Real beach-photo section backgrounds (soft sand tint keeps text readable) ---------- */
+      .bg-beach-1 {
+        background-image:
+          linear-gradient(rgba(251, 243, 225, 0.9), rgba(251, 243, 225, 0.9)),
+          url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1000&q=60&auto=format&fit=crop");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+      .bg-beach-2 {
+        background-image:
+          linear-gradient(rgba(251, 243, 225, 0.9), rgba(251, 243, 225, 0.9)),
+          url("https://images.unsplash.com/photo-1505144808419-1957a94ca61e?w=1000&q=60&auto=format&fit=crop");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+
+      /* ---------- Film grain overlay ---------- */
+      #app::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        z-index: 45;
+        opacity: 0.05;
+        mix-blend-mode: overlay;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      }
+
+      /* ---------- Ornamental divider ---------- */
+      .ornament {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.85rem;
+      }
+      .ornament::before,
+      .ornament::after {
+        content: "";
+        height: 1px;
+        width: 34px;
+        background: linear-gradient(to var(--fade-dir, right), transparent, var(--gold-accent));
+      }
+      .ornament::after {
+        --fade-dir: left;
+      }
+      .divider-veil {
+        opacity: 0;
+        transform: scaleX(0.3);
+        transform-origin: center;
+      }
+
+      /* ---------- Footer signature reveal ---------- */
+      .footer-seal,
+      .footer-stagger {
+        opacity: 0;
+      }
+      .footer-glow {
+        position: absolute;
+        top: 6%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 280px;
+        height: 280px;
+        border-radius: 9999px;
+        background: radial-gradient(circle, rgba(185, 151, 91, 0.32), transparent 70%);
+        filter: blur(18px);
+        opacity: 0;
+        pointer-events: none;
+        z-index: -1;
+      }
+
+      /* ---------- Section seam dividers (drawn-in wave between sections) ---------- */
+      .section-divider {
+        position: relative;
+        z-index: 20;
+        display: block;
+        width: 100%;
+        height: 34px;
+      }
+      .section-divider path {
+        fill: none;
+        stroke: var(--gold-accent);
+        stroke-width: 1.25;
+        stroke-linecap: round;
+        opacity: 0.65;
+      }
+
+      /* ---------- Elegant eyebrow label ---------- */
+      .eyebrow {
+        font-family: "Montserrat", sans-serif;
+        font-weight: 500;
+        font-size: 10.5px;
+        letter-spacing: 0.38em;
+        color: var(--gold-accent);
+      }
+
+      /* ---------- Splash / Gatekeeper ---------- */
+      #splash {
+        position: fixed;
+        inset: 0;
+        z-index: 60;
+      }
+      .splash-panel {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 50%;
+        background: #071b24;
+        background-image: radial-gradient(circle at 100% 50%, rgba(47, 184, 176, 0.14), transparent 55%);
+      }
+      #splash-left {
+        left: 0;
+        border-right: 1px solid rgba(47, 184, 176, 0.18);
+      }
+      #splash-right {
+        right: 0;
+        border-left: 1px solid rgba(47, 184, 176, 0.18);
+      }
+      #splash-badge {
+        position: fixed;
+        inset: 0;
+        z-index: 65;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      #splash-btn {
+        width: 158px;
+        height: 158px;
+        border-radius: 9999px;
+        background: radial-gradient(circle at 30% 25%, #0d3a4a, #071b24 75%);
+        border: 1px solid rgba(47, 184, 176, 0.55);
+        box-shadow:
+          0 0 0 1px rgba(47, 184, 176, 0.15),
+          0 20px 45px rgba(2, 15, 20, 0.6),
+          inset 0 0 25px rgba(47, 184, 176, 0.08);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: transform 0.25s ease;
+      }
+      #splash-btn:active {
+        transform: scale(0.96);
+      }
+      #splash-btn:focus-visible {
+        outline: 2px solid var(--turquoise-accent);
+        outline-offset: 4px;
+      }
+
+      /* ---------- Calendar flip box ---------- */
+      .flip-card {
+        perspective: 800px;
+      }
+      .flip-inner {
+        transform: rotateX(-90deg);
+        transform-origin: top center;
+        transition: transform 1s cubic-bezier(0.2, 0.9, 0.3, 1);
+      }
+      .flip-inner.flipped {
+        transform: rotateX(0deg);
+      }
+
+      /* ---------- Timeline ---------- */
+      .timeline-track {
+        position: absolute;
+        left: 19px;
+        top: 0;
+        bottom: 0;
+        width: 2px;
+        background: linear-gradient(to bottom, var(--turquoise-accent), var(--coral-blush));
+      }
+
+      /* ---------- Bottom nav ---------- */
+      #bottom-nav {
+        box-shadow: 0 -10px 30px rgba(8, 66, 90, 0.12);
+      }
+      #rsvp-fab {
+        box-shadow: 0 10px 20px rgba(11, 110, 140, 0.4);
+      }
+
+      /* ---------- Focus visibility ---------- */
+      a:focus-visible,
+      button:focus-visible {
+        outline: 2px solid var(--ocean-deep);
+        outline-offset: 3px;
+      }
+
+      /* ---------- Reduced motion ---------- */
+      @media (prefers-reduced-motion: reduce) {
+        * {
+          scroll-behavior: auto !important;
+        }
+      }
+
+      .section-veil {
+        opacity: 0;
+      }
+
+      /* ---------- Scene 5: message photo frame ---------- */
+      .photo-veil {
+        opacity: 0;
+      }
+      .wave-underline {
+        display: block;
+        margin: 0.9rem auto 0;
+        width: 64px;
+      }
+      .wave-underline path {
+        stroke: var(--gold-accent);
+        stroke-width: 1.5;
+        fill: none;
+        stroke-linecap: round;
+      }
+      .message-frame {
+        position: relative;
+        isolation: isolate;
+      }
+      .message-frame::before {
+        content: "";
+        position: absolute;
+        inset: -10px;
+        border: 1px solid rgba(47, 184, 176, 0.45);
+        border-radius: 1.75rem;
+        z-index: -1;
+      }
+      @keyframes driftShell {
+        0%,
+        100% {
+          transform: translateY(0) rotate(-4deg);
+        }
+        50% {
+          transform: translateY(-8px) rotate(2deg);
+        }
+      }
+      .drift-shell {
+        animation: driftShell 5s ease-in-out infinite;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .drift-shell {
+          animation: none;
+        }
+      }
+    </style>
+  </head>
+
+  <body class="font-sans text-ocean antialiased">
+    <!-- ============ SCENE 1 — SPLASH / GATEKEEPER ============ -->
+    <div id="splash" aria-hidden="false">
+      <div id="splash-left" class="splash-panel"></div>
+      <div id="splash-right" class="splash-panel"></div>
+    </div>
+    <div id="splash-badge">
+      <button id="splash-btn" aria-label="Open Rami and Abir's wedding invitation">
+        <span class="font-serif italic text-2xl text-[#eaf6f5] leading-none">Rami &amp; Abir</span>
+        <span class="mt-3 h-px w-8 bg-[#2fb8b0]/50"></span>
+      </button>
+    </div>
+
+    <!-- Background music: place your file at audio/music.mp3 -->
+    <audio id="bg-music" loop preload="auto">
+      <source src="audio/music.mp3" type="audio/mpeg" />
+    </audio>
+
+    <!-- ============ PHONE FRAME / MAIN APP ============ -->
+    <div class="min-h-screen w-full flex justify-center bg-[#071b24] sm:py-8">
+      <main
+        id="app"
+        class="relative w-full max-w-md min-h-screen sm:min-h-[calc(100vh-4rem)] sm:rounded-[2.5rem] overflow-hidden"
+        id="phone-frame"
+      >
+        <button
+          id="lang-toggle"
+          class="fixed top-5 right-5 sm:absolute z-50 h-11 min-w-11 px-3 rounded-full bg-deepsea/80 backdrop-blur border border-gold/40 flex items-center justify-center gap-1.5 text-sand opacity-0 pointer-events-none transition-opacity duration-500"
+          aria-label="Switch to English"
+        >
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10" />
+            <line x1="2" y1="12" x2="22" y2="12" />
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+          </svg>
+          <span id="lang-toggle-label" class="font-serif italic text-xs tracking-wide">EN</span>
+        </button>
+
+        <!-- ============ SCENE 2 — HERO ============ -->
+        <section id="home" class="relative h-[120svh] overflow-hidden">
+          <video class="absolute inset-0 w-full h-full object-cover" autoplay muted loop playsinline>
+            <source src="img/wedding.mp4" type="video/mp4" />
+          </video>
+
+          <div class="absolute inset-x-0 top-24 flex flex-col items-center text-center px-6">
+            <p
+              class="hero-anim font-arabic-display text-xl tracking-wide leading-loose text-gold"
+              dir="rtl"
+              data-ar="حفل زفاف"
+              data-en="Wedding Ceremony"
+            >
+              حفل زفاف
+            </p>
+            <h1 class="hero-anim font-script text-6xl leading-none text-deepsea drop-shadow-sm mt-2">
+              Rami &amp; Abir
+            </h1>
+            <div class="hero-anim ornament my-5">
+              <p class="font-serif italic text-lg tracking-[0.15em] text-deepsea/80" dir="ltr">07 · 07 · 2027</p>
+            </div>
+            <p
+              class="hero-anim font-arabic text-lg tracking-wide text-deepsea/90"
+              dir="rtl"
+              data-ar="الأربعاء 7 جويلية - الساعة 7:00 مساءً"
+              data-en="Wednesday, July 7th — 7:00 PM"
+            >
+              الأربعاء 7 جويلية - الساعة 7:00 مساءً
+            </p>
+          </div>
+        </section>
+
+        <div id="content-frame">
+          <!-- ============ SCENE 3 — QURANIC VERSE & NIKKAH INVITATION ============ -->
+          <section id="verse" class="relative overflow-hidden px-6 py-16">
+            <video class="absolute inset-0 w-full h-full object-cover" autoplay muted loop playsinline>
+              <source src="img/bg2.mp4" type="video/mp4" />
+            </video>
+            <div class="absolute inset-0 bg-sand/80"></div>
+
+            <div class="relative z-10">
+              <div
+                class="section-veil verse-card rounded-2xl border border-gold/30 bg-white/40 backdrop-blur-sm px-7 py-9 text-center"
+                data-anim="rise"
+              >
+                <p
+                  class="section-veil font-arabic text-[1.65rem] leading-[2.6rem] text-deepsea quran-fixed"
+                  dir="rtl"
+                  data-anim="clip"
+                >
+                  وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ
+                  بَيْنَكُم مَّوَدَّةً وَرَحْمَةً
+                </p>
+                <div class="divider-veil ornament my-5"></div>
+                <p
+                  class="section-veil font-kufi text-[11px] text-gold tracking-[0.15em] quran-fixed"
+                  dir="rtl"
+                  data-anim="tracking"
+                >
+                  سورة الروم - الآية 21
+                </p>
+              </div>
+
+              <div class="mt-8 text-center px-2">
+                <p class="section-veil eyebrow" data-anim="tracking">THE FAMILY</p>
+                <p
+                  class="section-veil font-arabic-display text-[2.15rem] leading-tight text-deepsea mt-3"
+                  data-anim="blur"
+                  dir="rtl"
+                  data-ar="عائلة بالحاج يوسف"
+                  data-en="BEL HADJ YOUSSEF"
+                >
+                  عائلة بالحاج يوسف
+                </p>
+              </div>
+              <div class="mt-6 text-center px-3">
+                <p
+                  class="section-veil font-arabic text-xl leading-loose text-deepsea/85"
+                  dir="rtl"
+                  data-anim="clip"
+                  data-ar="يتشرفون بدعوتكم لحضور عقد قران ابننا وابنتنا"
+                  data-en="are honored to invite you to celebrate the marriage contract of their son and daughter"
+                >
+                  يتشرفون بدعوتكم لحضور عقد قران ابننا وابنتنا
+                </p>
+              </div>
+
+              <div class="mt-9 text-center">
+                <p
+                  class="section-veil font-arabic-display text-5xl text-gold leading-none"
+                  dir="rtl"
+                  data-anim="scale"
+                  data-ar="رامي &amp; عبير"
+                  data-en="Rami &amp; Abir"
+                >
+                  رامي &amp; عبير
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <svg class="section-divider" viewBox="0 0 400 34" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M0 17 C 60 3, 100 31, 160 17 S 260 3, 320 17 S 380 28, 400 17" />
+          </svg>
+
+          <!-- ============ SCENE 4 — VENUE & COUNTDOWN ============ -->
+          <section id="venue" class="relative overflow-hidden">
+            <video class="absolute inset-0 w-full h-full object-cover" autoplay muted loop playsinline>
+              <source src="img/bg2.mp4" type="video/mp4" />
+            </video>
+            <div class="absolute inset-0 bg-foam/92"></div>
+
+            <div class="relative z-10 px-6 py-16">
+              <p class="section-veil eyebrow text-center" data-anim="tracking">THE DETAILS</p>
+              <h2
+                class="section-veil font-serif italic font-medium text-[2.35rem] tracking-wide text-center text-deepsea mt-3 mb-8"
+                data-anim="blur"
+              >
+                Where &amp; When
+              </h2>
+
+              <div
+                class="section-veil flex items-center gap-4 rounded-2xl bg-foam border border-turquoise/20 p-4"
+                data-anim="rise"
+                dir="ltr"
+              >
+                <div class="flip-card w-16 h-16 shrink-0">
+                  <div
+                    class="flip-inner w-full h-full rounded-lg bg-sand border border-gold/40 text-deepsea flex flex-col items-center justify-center overflow-hidden"
+                  >
+                    <span
+                      class="text-[8px] tracking-[0.2em] bg-deepsea w-full text-center py-0.5 text-goldlight uppercase"
+                      data-ar="جويلية"
+                      data-en="July"
+                      >Juillet</span
+                    >
+                    <span class="font-serif text-2xl font-semibold leading-none mt-1 text-deepsea">07</span>
+                  </div>
+                </div>
+                <div class="text-left">
+                  <p class="font-serif italic font-medium text-lg text-deepsea">Espace de Fêtes La Falaise</p>
+                  <p
+                    class="text-[11px] text-gold mt-1 tracking-[0.2em] uppercase"
+                    data-ar="المنستير"
+                    data-en="Monastir"
+                  >
+                    Monastir
+                  </p>
+                </div>
+              </div>
+
+              <div
+                id="countdown"
+                class="section-veil grid grid-cols-4 gap-2 mt-8"
+                role="timer"
+                aria-live="polite"
+                data-anim="scale"
+                dir="ltr"
+              >
+                <div class="rounded-xl bg-deepsea text-sand text-center py-4 border border-gold/25">
+                  <p id="cd-days" class="font-serif text-2xl font-semibold">00</p>
+                  <p class="text-[9px] tracking-[0.2em] mt-1 text-goldlight" data-ar="أيام" data-en="DAYS">DAYS</p>
+                </div>
+                <div class="rounded-xl bg-deepsea text-sand text-center py-4 border border-gold/25">
+                  <p id="cd-hours" class="font-serif text-2xl font-semibold">00</p>
+                  <p class="text-[9px] tracking-[0.2em] mt-1 text-goldlight" data-ar="ساعات" data-en="HRS">HRS</p>
+                </div>
+                <div class="rounded-xl bg-deepsea text-sand text-center py-4 border border-gold/25">
+                  <p id="cd-mins" class="font-serif text-2xl font-semibold">00</p>
+                  <p class="text-[9px] tracking-[0.2em] mt-1 text-goldlight" data-ar="دقائق" data-en="MIN">MIN</p>
+                </div>
+                <div class="rounded-xl bg-deepsea text-sand text-center py-4 border border-gold/25">
+                  <p id="cd-secs" class="font-serif text-2xl font-semibold">00</p>
+                  <p class="text-[9px] tracking-[0.2em] mt-1 text-goldlight" data-ar="ثواني" data-en="SEC">SEC</p>
+                </div>
+              </div>
+
+              <div class="section-veil mt-8 rounded-2xl border px-6 py-6 text-center" data-anim="rise">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1360.8789343651758!2d10.812312420232171!3d35.78191428109518!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x13026d8259b00555%3A0xf84f40a57b1af564!2sTour%20la%20falaise%20monastir!5e0!3m2!1sfr!2sfr!4v1733305639223!5m2!1sfr!2sfr"
+                  style="width: 100%; height: 300px; border: 0"
+                  allowfullscreen=""
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                ></iframe>
+              </div>
+            </div>
+          </section>
+
+          <svg class="section-divider" viewBox="0 0 400 34" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M0 17 C 60 31, 100 3, 160 17 S 260 31, 320 17 S 380 6, 400 17" />
+          </svg>
+
+          <!-- ============ SCENE 5 — A MESSAGE FROM THE COUPLE ============ -->
+          <section id="message" class="bg-beach-1 px-6 py-16">
+            <p class="section-veil eyebrow text-center" data-anim="tracking">A WORD FROM US</p>
+            <h2
+              class="section-veil font-arabic-display text-[2.6rem] leading-tight text-center text-deepsea mt-3"
+              dir="rtl"
+              data-anim="blur"
+              data-ar="كلمة من القلب"
+              data-en="A Word From The Heart"
+            >
+              كلمة من القلب
+            </h2>
+            <svg class="section-veil wave-underline" viewBox="0 0 64 12" aria-hidden="true" data-anim="rise">
+              <path d="M2 8 C 14 -2, 22 18, 32 6 S 50 -2, 62 8" />
+            </svg>
+
+            <div
+              class="section-veil mt-8 rounded-[1.75rem] border border-gold/30 bg-coral/20 px-7 py-10 text-center backdrop-blur-sm"
+              data-anim="rise"
+            >
+              <p
+                class="section-veil font-arabic text-[1.6rem] leading-[2.7rem] text-deepsea"
+                dir="rtl"
+                lang="ar"
+                data-anim="clip"
+                data-ar="وجودكم بيننا هو أجمل هدية، وحضوركم يزيد فرحتنا نورًا وسعادة 💫 ننتظركم بكل حب لنصنع معًا ذكرى لا تُنسى 🤍"
+                data-en="Your presence with us is the most beautiful gift, and your attendance fills our joy with light and happiness 💫 We're waiting to welcome you with love, to create an unforgettable memory together 🤍"
+              >
+                وجودكم بيننا هو أجمل هدية، وحضوركم يزيد فرحتنا نورًا وسعادة 💫 ننتظركم بكل حب لنصنع معًا ذكرى لا تُنسى
+                🤍
+              </p>
+              <div class="section-veil ornament mt-6" data-anim="scale">
+                <span
+                  class="font-arabic-display text-2xl text-gold"
+                  dir="rtl"
+                  data-ar="رامي &amp; عبير"
+                  data-en="Rami &amp; Abir"
+                  >رامي &amp; عبير</span
+                >
+              </div>
+            </div>
+
+            <div class="photo-veil message-frame mt-10 mx-auto max-w-[280px]">
+              <img
+                src="img/couples.jpg"
+                alt="Beach at sunset, the wedding backdrop"
+                class="w-full h-72 object-cover rounded-[1.5rem] shadow-xl"
+                loading="lazy"
+              />
+              <span class="drift-shell absolute -bottom-5 -right-4 text-4xl select-none" aria-hidden="true"> 🤍 </span>
+            </div>
+          </section>
+
+          <svg class="section-divider" viewBox="0 0 400 34" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M0 17 C 60 3, 100 31, 160 17 S 260 3, 320 17 S 380 28, 400 17" />
+          </svg>
+
+          <!-- ============ FOOTER ============ -->
+          <footer id="contact" class="relative px-6 pt-10 pb-32 text-center bg-foam/45">
+            <div class="footer-glow" aria-hidden="true"></div>
+            <div class="divider-veil ornament mb-5"></div>
+            <p class="footer-seal font-script text-4xl text-deepsea">Rami &amp; Abir</p>
+            <p
+              class="footer-stagger text-[10px] tracking-[0.25em] uppercase text-deepsea/60 mt-3 font-medium"
+              data-ar="لأي استفسار، يسعدنا تواصلكم معنا على"
+              data-en="For questions, reach the couple at"
+            >
+              لأي استفسار، يسعدنا تواصلكم معنا على
+            </p>
+            <a
+              href="mailto:hello@ramiandabir.wedding"
+              class="footer-stagger inline-block mt-3 font-serif italic text-base text-gold tracking-wide"
+              dir="ltr"
+              >rami.belhadjyoussef@gmail.com</a
+            >
+            <a
+              href="tel:+2169754425"
+              class="footer-stagger block font-serif italic text-base text-gold tracking-wide mt-1"
+              dir="ltr"
+              >+216 97 554 425</a
+            >
+          </footer>
+        </div>
+
+        <!-- ============ SCENE 6 — STICKY BOTTOM NAV ============ -->
+        <nav
+          id="bottom-nav"
+          class="absolute bottom-0 inset-x-0 bg-sand/95 backdrop-blur border-t border-turquoise/30 z-30"
+        >
+          <div class="relative flex items-end justify-between px-6 pt-3 pb-4">
+            <button
+              data-target="#contact"
+              data-call="tel:+2169754425"
+              class="nav-btn flex flex-col items-center gap-1 text-ocean/70 text-[10px]"
+              aria-label="Call us"
+            >
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path
+                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"
+                />
+              </svg>
+              <span data-ar="اتصال" data-en="Contact">Contact</span>
+            </button>
+
+            <button
+              data-target="#home"
+              class="nav-btn flex flex-col items-center gap-1 text-ocean/70 text-[10px]"
+              aria-label="Home"
+            >
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                <path d="M9 22V12h6v10" />
+              </svg>
+              <span data-ar="الرئيسية" data-en="Home">Home</span>
+            </button>
+
+            <div class="w-14"></div>
+
+            <button
+              data-target="#venue"
+              class="nav-btn flex flex-col items-center gap-1 text-ocean/70 text-[10px]"
+              aria-label="Location"
+            >
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 22s8-7.5 8-13a8 8 0 1 0-16 0c0 5.5 8 13 8 13z" />
+                <circle cx="12" cy="9" r="3" />
+              </svg>
+              <span data-ar="الموقع" data-en="Location">Location</span>
+            </button>
+
+            <button
+              data-target="#message"
+              class="nav-btn flex flex-col items-center gap-1 text-ocean/70 text-[10px]"
+              aria-label="Message"
+            >
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path
+                  d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 1 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z"
+                />
+              </svg>
+              <span data-ar="رسالة" data-en="Message">Message</span>
+            </button>
+
+            <button
+              id="rsvp-fab"
+              data-target="#venue"
+              class="absolute left-1/2 -translate-x-1/2 -top-6 w-14 h-14 rounded-full bg-ocean text-sand flex flex-col items-center justify-center"
+              aria-label="RSVP"
+            >
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path
+                  d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 1 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z"
+                />
+              </svg>
+            </button>
+          </div>
+        </nav>
+      </main>
+    </div>
+
+    <script>
+      gsap.registerPlugin(ScrollTrigger);
+      const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+      /* ---------------- Scene 1: Splash gatekeeper ---------------- */
+      const splashBtn = document.getElementById("splash-btn");
+      const splash = document.getElementById("splash");
+      const splashBadge = document.getElementById("splash-badge");
+
+      splashBtn.addEventListener("click", () => {
+        const tl = gsap.timeline({
+          defaults: { duration: reduceMotion ? 0 : 1, ease: "power3.inOut" },
+          onComplete: () => {
+            splash.style.display = "none";
+            splashBadge.style.display = "none";
+            document.body.style.overflow = "auto";
+            runHeroIntro();
+            ScrollTrigger.refresh();
+            startMusic();
+            autoPlayIntroScroll();
+          },
+        });
+        tl.to(splashBtn, { scale: 0.85, opacity: 0, duration: reduceMotion ? 0 : 0.4 }, 0)
+          .to("#splash-left", { xPercent: -100 }, 0.1)
+          .to("#splash-right", { xPercent: 100 }, 0.1);
+      });
+
+      /* ---------------- Gentle guided auto-scroll after splash opens ---------------- */
+      function autoPlayIntroScroll() {
+        let cancelled = false;
+        let rafId = null;
+
+        function cancel() {
+          if (cancelled) return;
+          cancelled = true;
+          if (rafId) cancelAnimationFrame(rafId);
+          window.removeEventListener("wheel", cancel);
+          window.removeEventListener("touchstart", cancel);
+          window.removeEventListener("keydown", cancel);
+        }
+
+        // Any guest interaction immediately hands control back to normal scrolling.
+        window.addEventListener("wheel", cancel, { passive: true });
+        window.addEventListener("touchstart", cancel, { passive: true });
+        window.addEventListener("keydown", cancel);
+
+        function run(targetY, duration) {
+          const startY = window.scrollY;
+          const diff = targetY - startY;
+          if (Math.abs(diff) < 1 || duration === 0) {
+            if (!cancelled) window.scrollTo(0, targetY);
+            cancel();
+            return;
+          }
+          const startTime = performance.now();
+          function step(now) {
+            if (cancelled) return;
+            const progress = Math.min((now - startTime) / duration, 1);
+            const eased = -(Math.cos(Math.PI * progress) - 1) / 2; // ease-in-out sine — smooth, unhurried throughout
+            window.scrollTo(0, startY + diff * eased);
+            if (progress < 1) {
+              rafId = requestAnimationFrame(step);
+            } else {
+              cancel();
+            }
+          }
+          rafId = requestAnimationFrame(step);
+        }
+
+        // Small pause after the splash clears so the hero has a beat to breathe before the page glides down.
+        setTimeout(() => {
+          if (cancelled) return;
+          const targetY = document.documentElement.scrollHeight - window.innerHeight;
+          const distance = targetY - window.scrollY;
+          const slowSpeed = 90; // px per second — a leisurely, unhurried pace for the full page
+          const duration = reduceMotion ? 0 : Math.min(Math.max((distance / slowSpeed) * 1000, 4000), 22000);
+          run(targetY, duration);
+        }, 700);
+      }
+
+      /* ---------------- Background music (autoplays once splash opens; no manual control) ---------------- */
+      const bgMusic = document.getElementById("bg-music");
+      bgMusic.volume = 0.55;
+
+      function startMusic() {
+        bgMusic.play().catch(() => {
+          // Autoplay blocked by the browser — that's fine, the film continues silently.
+        });
+      }
+
+      /* ---------------- Language toggle: Arabic (default) <-> English ---------------- */
+      const langToggle = document.getElementById("lang-toggle");
+      const langToggleLabel = document.getElementById("lang-toggle-label");
+      const i18nEls = document.querySelectorAll("[data-ar][data-en]");
+      let currentLang = "ar";
+
+      function applyLanguage(lang) {
+        currentLang = lang;
+        document.documentElement.setAttribute("lang", lang);
+        document.documentElement.setAttribute("dir", lang === "ar" ? "rtl" : "ltr");
+
+        i18nEls.forEach((el) => {
+          el.textContent = lang === "ar" ? el.dataset.ar : el.dataset.en;
+        });
+
+        langToggleLabel.textContent = lang === "ar" ? "EN" : "AR";
+        langToggle.setAttribute("aria-label", lang === "ar" ? "Switch to English" : "التبديل إلى العربية");
+      }
+
+      langToggle.addEventListener("click", () => {
+        applyLanguage(currentLang === "ar" ? "en" : "ar");
+      });
+
+      // Reveal the toggle once the splash opens (same timing the music button used to have).
+      const revealLangToggle = () => {
+        langToggle.classList.remove("opacity-0", "pointer-events-none");
+      };
+      splashBtn.addEventListener("click", () => setTimeout(revealLangToggle, reduceMotion ? 0 : 1000));
+
+      /* ---------------- Scene 2: Hero glide-up ---------------- */
+      function runHeroIntro() {
+        gsap.from(".hero-anim", {
+          y: reduceMotion ? 0 : 40,
+          opacity: 0,
+          duration: reduceMotion ? 0 : 1,
+          stagger: 0.15,
+          ease: "power2.out",
+        });
+      }
+
+      /* ---------------- Scroll-triggered section reveals: different treatment per text type ---------------- */
+      gsap.utils.toArray(".section-veil").forEach((el) => {
+        const anim = el.dataset.anim || "blur";
+        let fromVars, toVars;
+
+        if (anim === "blur") {
+          // Headline treatment: soft focus-pull as it rises into view
+          fromVars = { opacity: 0, y: 28, filter: reduceMotion ? "none" : "blur(6px)" };
+          toVars = { opacity: 1, y: 0, filter: "blur(0px)", duration: reduceMotion ? 0 : 1, ease: "power2.out" };
+        } else if (anim === "rise") {
+          // Cards & containers: plain, quiet lift
+          fromVars = { opacity: 0, y: 22 };
+          toVars = { opacity: 1, y: 0, duration: reduceMotion ? 0 : 0.85, ease: "power2.out" };
+        } else if (anim === "tracking") {
+          // Eyebrow labels: letters open up as they fade in
+          const finalSpacing = getComputedStyle(el).letterSpacing;
+          fromVars = { opacity: 0, letterSpacing: "0.02em" };
+          toVars = { opacity: 1, letterSpacing: finalSpacing, duration: reduceMotion ? 0 : 1.1, ease: "power2.out" };
+        } else if (anim === "scale") {
+          // Names / signature marks: gentle pop
+          fromVars = { opacity: 0, scale: reduceMotion ? 1 : 0.82, y: 8 };
+          toVars = { opacity: 1, scale: 1, y: 0, duration: reduceMotion ? 0 : 0.9, ease: "back.out(1.6)" };
+        } else if (anim === "clip") {
+          // Arabic quotes / prose: curtain wipe reveal, left to right
+          fromVars = { opacity: 1, clipPath: reduceMotion ? "inset(0 0% 0 0)" : "inset(0 100% 0 0)" };
+          toVars = { clipPath: "inset(0 0% 0 0)", duration: reduceMotion ? 0 : 1.3, ease: "power3.inOut" };
+        }
+
+        gsap.fromTo(el, fromVars, {
+          ...toVars,
+          scrollTrigger: { trigger: el, start: "top 85%" },
+        });
+      });
+
+      /* ---------------- Divider line-draw reveal (ornaments without text) ---------------- */
+      gsap.utils.toArray(".divider-veil").forEach((el) => {
+        gsap.fromTo(
+          el,
+          { opacity: 0, scaleX: 0.25 },
+          {
+            opacity: 1,
+            scaleX: 1,
+            duration: reduceMotion ? 0 : 1,
+            ease: "power2.out",
+            scrollTrigger: { trigger: el, start: "top 90%" },
+          },
+        );
+      });
+
+      /* ---------------- Section seam waves: drawn in as you scroll to the boundary ---------------- */
+      gsap.utils.toArray(".section-divider path").forEach((path) => {
+        const len = path.getTotalLength();
+        gsap.set(path, { strokeDasharray: len, strokeDashoffset: reduceMotion ? 0 : len });
+        gsap.to(path, {
+          strokeDashoffset: 0,
+          duration: reduceMotion ? 0 : 1.4,
+          ease: "power2.inOut",
+          scrollTrigger: { trigger: path.closest(".section-divider"), start: "top 92%" },
+        });
+      });
+
+      /* ---------------- Footer: special signature reveal (glow + seal stamp + staggered contact) ---------------- */
+      const footerTl = gsap.timeline({
+        scrollTrigger: { trigger: "#contact", start: "top 78%" },
+      });
+      footerTl
+        .to(".footer-glow", { opacity: 1, duration: reduceMotion ? 0 : 1.6, ease: "power2.out" }, 0)
+        .fromTo(
+          ".footer-seal",
+          {
+            opacity: 0,
+            scale: reduceMotion ? 1 : 1.5,
+            rotate: reduceMotion ? 0 : -6,
+            filter: reduceMotion ? "none" : "blur(4px)",
+          },
+          {
+            opacity: 1,
+            scale: 1,
+            rotate: 0,
+            filter: "blur(0px)",
+            duration: reduceMotion ? 0 : 1,
+            ease: "back.out(1.7)",
+          },
+          0.15,
+        )
+        .fromTo(
+          ".footer-stagger",
+          { opacity: 0, y: reduceMotion ? 0 : 16 },
+          { opacity: 1, y: 0, duration: reduceMotion ? 0 : 0.7, stagger: reduceMotion ? 0 : 0.15, ease: "power2.out" },
+          0.55,
+        );
+
+      /* ---------------- Scene 5: photo reveal (soft scale + rise) ---------------- */
+      gsap.utils.toArray(".photo-veil").forEach((el, i) => {
+        gsap.fromTo(
+          el,
+          { opacity: 0, y: 40, scale: 0.94 },
+          {
+            opacity: 1,
+            y: 0,
+            scale: 1,
+            duration: reduceMotion ? 0 : 1.1,
+            delay: reduceMotion ? 0 : i * 0.15,
+            ease: "power2.out",
+            scrollTrigger: { trigger: el, start: "top 88%" },
+          },
+        );
+      });
+
+      /* ---------------- Timeline stagger drop-in ---------------- */
+      gsap.from(".timeline-item", {
+        opacity: 0,
+        y: 30,
+        stagger: 0.3,
+        duration: 0.8,
+        ease: "power2.out",
+        scrollTrigger: { trigger: "#timeline-section", start: "top 70%" },
+      });
+
+      /* ---------------- Calendar flip-box ---------------- */
+      ScrollTrigger.create({
+        trigger: "#venue",
+        start: "top 75%",
+        onEnter: () => document.querySelector(".flip-inner").classList.add("flipped"),
+      });
+
+      /* ---------------- Live countdown timer ---------------- */
+      const weddingDate = new Date("2026-12-25T19:00:00");
+      function updateCountdown() {
+        const now = new Date();
+        let diff = weddingDate - now;
+        if (diff < 0) diff = 0;
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+        const mins = Math.floor((diff / (1000 * 60)) % 60);
+        const secs = Math.floor((diff / 1000) % 60);
+        document.getElementById("cd-days").textContent = String(days).padStart(2, "0");
+        document.getElementById("cd-hours").textContent = String(hours).padStart(2, "0");
+        document.getElementById("cd-mins").textContent = String(mins).padStart(2, "0");
+        document.getElementById("cd-secs").textContent = String(secs).padStart(2, "0");
+      }
+      updateCountdown();
+      setInterval(updateCountdown, 1000);
+
+      /* ---------------- Bottom nav smooth scroll / call ---------------- */
+      document.querySelectorAll(".nav-btn, #rsvp-fab").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          if (btn.dataset.call) {
+            window.location.href = btn.dataset.call;
+            return;
+          }
+          const target = document.querySelector(btn.dataset.target);
+          if (target) target.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "start" });
+        });
+      });
+    </script>
+  </body>
 </html>
