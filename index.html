@@ -59,7 +59,7 @@
 
       html,
       body {
-        background: #071b24;
+        background: #f6efdd;
         overscroll-behavior-y: none;
       }
 
@@ -70,9 +70,9 @@
       /* ---------- Phone frame ---------- */
       #phone-frame {
         box-shadow:
-          0 40px 80px -20px rgba(2, 15, 20, 0.7),
-          0 0 0 10px #071b24,
-          0 0 0 11px rgba(47, 184, 176, 0.35);
+          0 40px 80px -20px rgba(120, 95, 70, 0.35),
+          0 0 0 10px #f6efdd,
+          0 0 0 11px rgba(185, 151, 91, 0.3);
       }
 
       /* ---------- Beach background with a thin inset page border ---------- */
@@ -184,28 +184,79 @@
         color: var(--gold-accent);
       }
 
-      /* ---------- Splash / Gatekeeper ---------- */
+      /* ---------- Splash / Gatekeeper — soft cream & watercolor, floral-inspired ---------- */
       #splash {
         position: fixed;
         inset: 0;
         z-index: 60;
+        background: #fbf6ec;
+        overflow: hidden;
       }
       .splash-panel {
         position: absolute;
         top: 0;
         bottom: 0;
         width: 50%;
-        background: #071b24;
-        background-image: radial-gradient(circle at 100% 50%, rgba(47, 184, 176, 0.14), transparent 55%);
+        background-color: #fbf6ec;
+        background-image:
+          radial-gradient(circle at 100% 45%, rgba(207, 230, 237, 0.9), transparent 60%),
+          radial-gradient(circle at 60% 70%, rgba(232, 163, 192, 0.12), transparent 55%);
       }
       #splash-left {
         left: 0;
-        border-right: 1px solid rgba(47, 184, 176, 0.18);
+        border-right: 1px solid rgba(185, 151, 91, 0.22);
       }
       #splash-right {
         right: 0;
-        border-left: 1px solid rgba(47, 184, 176, 0.18);
+        border-left: 1px solid rgba(185, 151, 91, 0.22);
       }
+
+      /* Soft central watercolor wash, like the reference art */
+      .splash-wash {
+        position: absolute;
+        top: 18%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 320px;
+        height: 320px;
+        border-radius: 9999px;
+        background: radial-gradient(circle, rgba(207, 230, 237, 0.85), rgba(207, 230, 237, 0.25) 55%, transparent 75%);
+        filter: blur(6px);
+        pointer-events: none;
+        z-index: 1;
+      }
+
+      /* Delicate branch + blossom corner ornaments */
+      .splash-bloom {
+        position: absolute;
+        pointer-events: none;
+        z-index: 2;
+        opacity: 0.92;
+      }
+      .splash-bloom.tl {
+        top: -6px;
+        left: -6px;
+        width: 130px;
+      }
+      .splash-bloom.tr {
+        top: -4px;
+        right: -6px;
+        width: 110px;
+        transform: scaleX(-1);
+      }
+      .splash-bloom.bl {
+        bottom: -6px;
+        left: -8px;
+        width: 100px;
+        transform: scaleY(-1);
+      }
+      .splash-bloom.br {
+        bottom: -4px;
+        right: -6px;
+        width: 120px;
+        transform: scale(-1, -1);
+      }
+
       #splash-badge {
         position: fixed;
         inset: 0;
@@ -218,12 +269,12 @@
         width: 158px;
         height: 158px;
         border-radius: 9999px;
-        background: radial-gradient(circle at 30% 25%, #0d3a4a, #071b24 75%);
-        border: 1px solid rgba(47, 184, 176, 0.55);
+        background: radial-gradient(circle at 32% 28%, #ffffff, #fbf6ec 78%);
+        border: 1px solid rgba(185, 151, 91, 0.55);
         box-shadow:
-          0 0 0 1px rgba(47, 184, 176, 0.15),
-          0 20px 45px rgba(2, 15, 20, 0.6),
-          inset 0 0 25px rgba(47, 184, 176, 0.08);
+          0 0 0 1px rgba(185, 151, 91, 0.12),
+          0 20px 45px rgba(120, 95, 70, 0.22),
+          inset 0 0 25px rgba(207, 230, 237, 0.5);
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -266,8 +317,30 @@
       #bottom-nav {
         box-shadow: 0 -10px 30px rgba(8, 66, 90, 0.12);
       }
+      .nav-btn {
+        transition:
+          color 0.25s ease,
+          transform 0.25s ease;
+      }
+      .nav-btn:hover,
+      .nav-btn:focus-visible {
+        color: var(--gold-accent);
+      }
+      .nav-btn:active {
+        transform: scale(0.94);
+      }
       #rsvp-fab {
         box-shadow: 0 10px 20px rgba(11, 110, 140, 0.4);
+        transition:
+          transform 0.25s ease,
+          box-shadow 0.25s ease;
+      }
+      #rsvp-fab:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 14px 26px rgba(11, 110, 140, 0.48);
+      }
+      #rsvp-fab:active {
+        transform: scale(0.94);
       }
 
       /* ---------- Focus visibility ---------- */
@@ -332,19 +405,246 @@
           animation: none;
         }
       }
+
+      /* ---------- Scene 2 Hero: elegant static backdrop + framed video beneath the text ---------- */
+      #home {
+        background:
+          radial-gradient(ellipse 90% 55% at 50% 22%, rgba(207, 230, 237, 0.75), transparent 65%),
+          radial-gradient(ellipse 70% 40% at 15% 90%, rgba(232, 163, 192, 0.14), transparent 65%),
+          radial-gradient(ellipse 70% 40% at 85% 5%, rgba(232, 163, 192, 0.12), transparent 60%), #fbf6ec;
+        overflow: hidden;
+      }
+
+      /* Faint watercolor texture etched into the backdrop */
+      #home::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+        pointer-events: none;
+        opacity: 0.6;
+        background-image:
+          radial-gradient(circle at 50% 15%, rgba(185, 151, 91, 0.07), transparent 42%),
+          repeating-linear-gradient(
+            135deg,
+            rgba(185, 151, 91, 0.03) 0px,
+            rgba(185, 151, 91, 0.03) 1px,
+            transparent 1px,
+            transparent 26px
+          );
+      }
+
+      /* Fine gold hairline frame just inside the section edge */
+      #home::after {
+        content: "";
+        position: absolute;
+        inset: 14px;
+        z-index: 0;
+        pointer-events: none;
+        border: 1px solid rgba(185, 151, 91, 0.28);
+        border-radius: 1.25rem;
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 2;
+      }
+
+      .hero-eyebrow {
+        color: var(--gold-accent);
+      }
+
+      .hero-title {
+        color: var(--deepsea-dark);
+        text-shadow: 0 4px 18px rgba(185, 151, 91, 0.18);
+      }
+
+      .hero-rule {
+        width: 46px;
+        height: 1px;
+        transform-origin: center;
+        background: linear-gradient(to right, transparent, rgba(185, 151, 91, 0.9), transparent);
+      }
+
+      .hero-date-pill {
+        background: rgba(255, 255, 255, 0.55);
+        border: 1px solid rgba(185, 151, 91, 0.5);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        color: var(--deepsea-dark);
+      }
+
+      .hero-date-pill p {
+        letter-spacing: 0.32em;
+      }
+
+      .hero-sub {
+        color: rgba(8, 66, 90, 0.75);
+      }
+
+      /* ---------- Framed video container beneath the hero text ---------- */
+      .hero-video-frame {
+        position: relative;
+        z-index: 2;
+        width: calc(100% - 3.5rem);
+        max-width: 340px;
+        margin: 2.25rem auto 0;
+        border-radius: 1.5rem;
+        overflow: hidden;
+        aspect-ratio: 4 / 5;
+        border: 1px solid rgba(216, 192, 139, 0.45);
+        box-shadow:
+          0 25px 50px -12px rgba(2, 15, 20, 0.65),
+          0 0 0 6px rgba(251, 243, 225, 0.04),
+          inset 0 0 0 1px rgba(251, 243, 225, 0.08);
+      }
+      .hero-video-frame video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+      .hero-video-frame::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        border-radius: inherit;
+        box-shadow: inset 0 0 40px rgba(4, 16, 22, 0.35);
+      }
+      /* Small corner accents at the frame's edges for a keepsake, ornamental feel */
+      .hero-video-frame .corner {
+        position: absolute;
+        width: 22px;
+        height: 22px;
+        border: 1.5px solid rgba(216, 192, 139, 0.85);
+        z-index: 3;
+      }
+      .hero-video-frame .corner-tl {
+        top: 10px;
+        left: 10px;
+        border-right: none;
+        border-bottom: none;
+      }
+      .hero-video-frame .corner-br {
+        bottom: 10px;
+        right: 10px;
+        border-left: none;
+        border-top: none;
+      }
+
+      /* Subtle scroll cue at the bottom of the hero */
+      .hero-scroll-cue {
+        position: absolute;
+        bottom: 22px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 6px;
+        color: var(--gold-accent);
+        opacity: 0.85;
+      }
+      .hero-scroll-cue span {
+        font-size: 9px;
+        letter-spacing: 0.3em;
+        text-transform: uppercase;
+      }
+      @keyframes scrollCueBounce {
+        0%,
+        100% {
+          transform: translateY(0);
+          opacity: 0.9;
+        }
+        50% {
+          transform: translateY(6px);
+          opacity: 0.5;
+        }
+      }
+      .hero-scroll-cue svg {
+        animation: scrollCueBounce 1.8s ease-in-out infinite;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .hero-scroll-cue svg {
+          animation: none;
+        }
+      }
     </style>
   </head>
 
   <body class="font-sans text-ocean antialiased">
     <!-- ============ SCENE 1 — SPLASH / GATEKEEPER ============ -->
     <div id="splash" aria-hidden="false">
-      <div id="splash-left" class="splash-panel"></div>
-      <div id="splash-right" class="splash-panel"></div>
+      <div id="splash-left" class="splash-panel">
+        <div class="splash-bloom tl" aria-hidden="true">
+          <svg viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M4 4 C 24 14, 40 22, 58 40 C 68 50, 74 60, 80 74"
+              stroke="#93A87A"
+              stroke-width="1.3"
+              stroke-linecap="round"
+            />
+            <path d="M20 12 C 26 18, 30 22, 34 30" stroke="#93A87A" stroke-width="1.1" stroke-linecap="round" />
+            <path d="M40 26 C 46 30, 50 34, 54 40" stroke="#93A87A" stroke-width="1.1" stroke-linecap="round" />
+            <ellipse cx="17" cy="9" rx="5.5" ry="3.4" fill="#F6D9E6" transform="rotate(20 17 9)" />
+            <ellipse cx="27" cy="16" rx="5" ry="3" fill="#F0BFD4" transform="rotate(-10 27 16)" />
+            <ellipse cx="10" cy="19" rx="4.5" ry="2.8" fill="#FBEAF1" transform="rotate(60 10 19)" />
+            <circle cx="17" cy="9" r="1.6" fill="#D88AAE" />
+            <ellipse cx="46" cy="32" rx="3.6" ry="2.2" fill="#93A87A" transform="rotate(35 46 32)" />
+            <ellipse cx="63" cy="46" rx="3.6" ry="2.2" fill="#93A87A" transform="rotate(35 63 46)" />
+          </svg>
+        </div>
+        <div class="splash-bloom bl" aria-hidden="true">
+          <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M2 2 C 20 8, 34 16, 46 32 C 52 40, 55 46, 58 55"
+              stroke="#93A87A"
+              stroke-width="1.2"
+              stroke-linecap="round"
+            />
+            <ellipse cx="12" cy="6" rx="10" ry="7" fill="#E7E2CE" opacity="0.55" />
+            <ellipse cx="36" cy="24" rx="4" ry="2.6" fill="#93A87A" transform="rotate(30 36 24)" />
+          </svg>
+        </div>
+      </div>
+      <div id="splash-right" class="splash-panel">
+        <div class="splash-wash" aria-hidden="true"></div>
+        <div class="splash-bloom tr" aria-hidden="true">
+          <svg viewBox="0 0 110 110" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M4 4 C 26 10, 42 18, 56 34 C 64 43, 68 50, 72 60"
+              stroke="#5C6E45"
+              stroke-width="1.2"
+              stroke-linecap="round"
+            />
+            <ellipse cx="18" cy="10" rx="5" ry="3.2" fill="#F0BFD4" transform="rotate(15 18 10)" />
+            <ellipse cx="28" cy="17" rx="4.6" ry="2.8" fill="#E88FB0" transform="rotate(-15 28 17)" />
+            <ellipse cx="10" cy="20" rx="4.2" ry="2.6" fill="#F6D9E6" transform="rotate(55 10 20)" />
+            <circle cx="18" cy="10" r="1.5" fill="#C5679A" />
+            <ellipse cx="42" cy="28" rx="3.2" ry="2" fill="#93A87A" transform="rotate(40 42 28)" />
+          </svg>
+        </div>
+        <div class="splash-bloom br" aria-hidden="true">
+          <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M2 2 C 24 8, 40 16, 54 32 C 62 41, 66 48, 70 58"
+              stroke="#93A87A"
+              stroke-width="1.2"
+              stroke-linecap="round"
+            />
+            <ellipse cx="14" cy="8" rx="5" ry="3.1" fill="#F6D9E6" transform="rotate(20 14 8)" />
+            <ellipse cx="24" cy="15" rx="4.4" ry="2.7" fill="#F0BFD4" transform="rotate(-8 24 15)" />
+            <circle cx="14" cy="8" r="1.4" fill="#D88AAE" />
+          </svg>
+        </div>
+      </div>
     </div>
     <div id="splash-badge">
       <button id="splash-btn" aria-label="Open Rami and Abir's wedding invitation">
-        <span class="font-serif italic text-2xl text-[#eaf6f5] leading-none">Rami &amp; Abir</span>
-        <span class="mt-3 h-px w-8 bg-[#2fb8b0]/50"></span>
+        <span class="font-serif italic text-2xl text-deepsea leading-none">Rami &amp; Abir</span>
+        <span class="mt-3 h-px w-8 bg-gold/60"></span>
       </button>
     </div>
 
@@ -374,34 +674,55 @@
         </button>
 
         <!-- ============ SCENE 2 — HERO ============ -->
-        <section id="home" class="relative h-[120svh] overflow-hidden">
-          <video class="absolute inset-0 w-full h-full object-cover" autoplay muted loop playsinline>
-            <source src="img/wedding.mp4" type="video/mp4" />
-          </video>
-
-          <div class="absolute inset-x-0 top-24 flex flex-col items-center text-center px-6">
+        <section
+          id="home"
+          class="relative min-h-[100svh] overflow-hidden flex flex-col justify-center px-6 pt-20 pb-14"
+        >
+          <div class="hero-content flex flex-col items-center text-center">
             <p
-              class="hero-anim font-arabic-display text-xl tracking-wide leading-loose text-gold"
+              class="hero-anim hero-eyebrow font-arabic-display text-xl tracking-[0.1em] leading-loose"
+              data-anim="tracking"
               dir="rtl"
               data-ar="حفل زفاف"
               data-en="Wedding Ceremony"
             >
               حفل زفاف
             </p>
-            <h1 class="hero-anim font-script text-6xl leading-none text-deepsea drop-shadow-sm mt-2">
+
+            <div class="hero-anim hero-rule mt-4" data-anim="line"></div>
+
+            <h1 class="hero-anim hero-title font-script text-7xl leading-none mt-4" data-anim="blur">
               Rami &amp; Abir
             </h1>
-            <div class="hero-anim ornament my-5">
-              <p class="font-serif italic text-lg tracking-[0.15em] text-deepsea/80" dir="ltr">07 · 07 · 2027</p>
+
+            <div class="hero-anim hero-date-pill ornament mt-8 px-6 py-2.5 rounded-full" data-anim="scale">
+              <p class="font-serif italic font-bold text-lg" dir="ltr">07 · 07 · 2027</p>
             </div>
+
             <p
-              class="hero-anim font-arabic text-lg tracking-wide text-deepsea/90"
+              class="hero-anim hero-sub font-arabic text-base tracking-wide mt-6 max-w-[260px] leading-relaxed"
+              data-anim="clip"
               dir="rtl"
               data-ar="الأربعاء 7 جويلية - الساعة 7:00 مساءً"
               data-en="Wednesday, July 7th — 7:00 PM"
             >
               الأربعاء 7 جويلية - الساعة 7:00 مساءً
             </p>
+          </div>
+
+          <div class="hero-anim hero-video-frame" data-anim="rise">
+            <span class="corner corner-tl" aria-hidden="true"></span>
+            <span class="corner corner-br" aria-hidden="true"></span>
+            <video autoplay muted loop playsinline>
+              <source src="img/wedding.mp4" type="video/mp4" />
+            </video>
+          </div>
+
+          <div class="hero-scroll-cue hero-anim" data-anim="fade" aria-hidden="true">
+            <span data-ar="مرر للأسفل" data-en="Scroll">Scroll</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 5v14M5 12l7 7 7-7" />
+            </svg>
           </div>
         </section>
 
@@ -415,7 +736,7 @@
 
             <div class="relative z-10">
               <div
-                class="section-veil verse-card rounded-2xl border border-gold/30 bg-white/40 backdrop-blur-sm px-7 py-9 text-center"
+                class="section-veil verse-card rounded-2xl border border-gold/30 bg-white/40 backdrop-blur-sm px-7 py-9 text-center shadow-[0_18px_40px_-16px_rgba(185,151,91,0.35)]"
                 data-anim="rise"
               >
                 <p
@@ -583,7 +904,7 @@
             </svg>
 
             <div
-              class="section-veil mt-8 rounded-[1.75rem] border border-gold/30 bg-coral/20 px-7 py-10 text-center backdrop-blur-sm"
+              class="section-veil mt-8 rounded-[1.75rem] border border-gold/30 bg-coral/20 px-7 py-10 text-center backdrop-blur-sm shadow-[0_18px_40px_-16px_rgba(185,151,91,0.3)]"
               data-anim="rise"
             >
               <p
@@ -610,9 +931,9 @@
 
             <div class="photo-veil message-frame mt-10 mx-auto max-w-[280px]">
               <img
-                src="img/couples.jpg"
-                alt="Beach at sunset, the wedding backdrop"
-                class="w-full h-72 object-cover rounded-[1.5rem] shadow-xl"
+                src="img/couples.png"
+                alt="wedding"
+                class="w-full h-auto object-cover rounded-[1.5rem] shadow-xl"
                 loading="lazy"
               />
               <span class="drift-shell absolute -bottom-5 -right-4 text-4xl select-none" aria-hidden="true"> 🤍 </span>
@@ -637,13 +958,13 @@
             </p>
             <a
               href="mailto:hello@ramiandabir.wedding"
-              class="footer-stagger inline-block mt-3 font-serif italic text-base text-gold tracking-wide"
+              class="footer-stagger inline-block mt-3 font-serif italic text-base text-gold tracking-wide transition-colors duration-300 hover:text-deepsea"
               dir="ltr"
               >rami.belhadjyoussef@gmail.com</a
             >
             <a
               href="tel:+2169754425"
-              class="footer-stagger block font-serif italic text-base text-gold tracking-wide mt-1"
+              class="footer-stagger block font-serif italic text-base text-gold tracking-wide mt-1 transition-colors duration-300 hover:text-deepsea"
               dir="ltr"
               >+216 97 554 425</a
             >
@@ -772,11 +1093,14 @@
         window.addEventListener("touchstart", cancel, { passive: true });
         window.addEventListener("keydown", cancel);
 
-        function run(targetY, duration) {
+        function getMaxScroll() {
+          return Math.max(0, document.documentElement.scrollHeight - window.innerHeight);
+        }
+
+        function run(duration) {
           const startY = window.scrollY;
-          const diff = targetY - startY;
-          if (Math.abs(diff) < 1 || duration === 0) {
-            if (!cancelled) window.scrollTo(0, targetY);
+          if (duration === 0) {
+            if (!cancelled) window.scrollTo(0, getMaxScroll());
             cancel();
             return;
           }
@@ -785,10 +1109,16 @@
             if (cancelled) return;
             const progress = Math.min((now - startTime) / duration, 1);
             const eased = -(Math.cos(Math.PI * progress) - 1) / 2; // ease-in-out sine — smooth, unhurried throughout
+            // Recompute the target every frame: videos and the maps iframe can still be
+            // loading and growing the page height, so a target measured only once may
+            // land short of the real bottom and never reveal the footer.
+            const currentMax = getMaxScroll();
+            const diff = currentMax - startY;
             window.scrollTo(0, startY + diff * eased);
             if (progress < 1) {
               rafId = requestAnimationFrame(step);
             } else {
+              window.scrollTo(0, getMaxScroll()); // final snap to the true bottom
               cancel();
             }
           }
@@ -798,11 +1128,10 @@
         // Small pause after the splash clears so the hero has a beat to breathe before the page glides down.
         setTimeout(() => {
           if (cancelled) return;
-          const targetY = document.documentElement.scrollHeight - window.innerHeight;
-          const distance = targetY - window.scrollY;
-          const slowSpeed = 90; // px per second — a leisurely, unhurried pace for the full page
-          const duration = reduceMotion ? 0 : Math.min(Math.max((distance / slowSpeed) * 1000, 4000), 22000);
-          run(targetY, duration);
+          const distance = getMaxScroll() - window.scrollY;
+          const slowSpeed = 40; // px per second — a very slow, cinematic drift down the page
+          const duration = reduceMotion ? 0 : Math.min(Math.max((distance / slowSpeed) * 1000, 8000), 40000);
+          run(duration);
         }, 700);
       }
 
@@ -845,20 +1174,8 @@
       };
       splashBtn.addEventListener("click", () => setTimeout(revealLangToggle, reduceMotion ? 0 : 1000));
 
-      /* ---------------- Scene 2: Hero glide-up ---------------- */
-      function runHeroIntro() {
-        gsap.from(".hero-anim", {
-          y: reduceMotion ? 0 : 40,
-          opacity: 0,
-          duration: reduceMotion ? 0 : 1,
-          stagger: 0.15,
-          ease: "power2.out",
-        });
-      }
-
-      /* ---------------- Scroll-triggered section reveals: different treatment per text type ---------------- */
-      gsap.utils.toArray(".section-veil").forEach((el) => {
-        const anim = el.dataset.anim || "blur";
+      /* ---------------- Shared reveal treatments: same animation language used across the whole site ---------------- */
+      function getRevealVars(el, anim) {
         let fromVars, toVars;
 
         if (anim === "blur") {
@@ -875,14 +1192,46 @@
           fromVars = { opacity: 0, letterSpacing: "0.02em" };
           toVars = { opacity: 1, letterSpacing: finalSpacing, duration: reduceMotion ? 0 : 1.1, ease: "power2.out" };
         } else if (anim === "scale") {
-          // Names / signature marks: gentle pop
+          // Names / signature marks / pills: gentle pop
           fromVars = { opacity: 0, scale: reduceMotion ? 1 : 0.82, y: 8 };
           toVars = { opacity: 1, scale: 1, y: 0, duration: reduceMotion ? 0 : 0.9, ease: "back.out(1.6)" };
         } else if (anim === "clip") {
           // Arabic quotes / prose: curtain wipe reveal, left to right
           fromVars = { opacity: 1, clipPath: reduceMotion ? "inset(0 0% 0 0)" : "inset(0 100% 0 0)" };
           toVars = { clipPath: "inset(0 0% 0 0)", duration: reduceMotion ? 0 : 1.3, ease: "power3.inOut" };
+        } else if (anim === "line") {
+          // Ornamental rule: draws outward from center
+          fromVars = { opacity: 0, scaleX: reduceMotion ? 1 : 0.15 };
+          toVars = { opacity: 1, scaleX: 1, duration: reduceMotion ? 0 : 0.9, ease: "power2.out" };
+        } else if (anim === "fade") {
+          // Plain, quiet fade — for understated cues
+          fromVars = { opacity: 0 };
+          toVars = { opacity: 1, duration: reduceMotion ? 0 : 1, ease: "power1.out" };
+        } else {
+          fromVars = { opacity: 0, y: 20 };
+          toVars = { opacity: 1, y: 0, duration: reduceMotion ? 0 : 0.9, ease: "power2.out" };
         }
+
+        return { fromVars, toVars };
+      }
+
+      /* ---------------- Scene 2: Hero intro — same per-element treatments as the rest of the site, played as a sequenced entrance ---------------- */
+      function runHeroIntro() {
+        const tl = gsap.timeline({ defaults: { ease: "power2.out" } });
+        const heroEls = gsap.utils.toArray(".hero-anim");
+
+        heroEls.forEach((el, i) => {
+          const anim = el.dataset.anim || "rise";
+          const { fromVars, toVars } = getRevealVars(el, anim);
+          gsap.set(el, fromVars);
+          tl.to(el, toVars, reduceMotion ? 0 : i * 0.16);
+        });
+      }
+
+      /* ---------------- Scroll-triggered section reveals: different treatment per text type ---------------- */
+      gsap.utils.toArray(".section-veil").forEach((el) => {
+        const anim = el.dataset.anim || "blur";
+        const { fromVars, toVars } = getRevealVars(el, anim);
 
         gsap.fromTo(el, fromVars, {
           ...toVars,
